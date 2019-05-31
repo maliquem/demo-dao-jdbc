@@ -32,9 +32,20 @@ public class Program {
 		}
 		
 		System.out.println("\n=== TESTE 4 Seller insert ===");		
-		Seller newSeller = new Seller(null, "Greg Durval", "greg@gmail.com", new Date(), 4000.0, department);
+		Seller newSeller = new Seller(null, "Greg Mobral", "greg@gmail.com", new Date(), 4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New Id = " + newSeller.getId());
+		
+		System.out.println("\n=== TESTE 5 Seller update ===");
+		seller = sellerDao.findById(8);
+		seller.setName("Martha Waine");
+		seller.setEmail("martha@gmai.com");
+		sellerDao.update(seller);
+		System.out.println("Updated Seller!");
+		
+		System.out.println("\n=== TESTE 6 Seller delete ===");
+		sellerDao.deleteById(9);
+		System.out.println("Seller deleted from database!");
 	}
 
 }
